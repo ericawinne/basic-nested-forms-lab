@@ -1,0 +1,15 @@
+<h1> wtf ? </h1>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label "Recipe title:" %>
+  <%= f.text_field :title %><br/>
+
+  <%= f.fields_for :ingredients do |ingredient_form| %>
+    <%= ingredient_form.label :name %>
+    <%= ingredient_form.text_field :name %><br/>
+
+    <%= ingredient_form.label :quantity %>
+    <%= ingredient_form.text_field :quantity %><br/>
+  <% end %>
+  <%= f.submit %>
+<% end %>
